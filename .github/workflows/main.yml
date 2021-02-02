@@ -2,11 +2,13 @@ name: eShopOnWeb Build and Test
 
 on: [push, pull_request, workflow_dispatch]
 
+env:
+  WEBAPP_NAME: sample-dotnet-core-app
+  WEBAPP_PACKAGE_PATH: '.'
+
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
@@ -27,6 +29,6 @@ jobs:
     - name: 'Run Azure webapp deploy action using publish profile credentials'
       uses: azure/webapps-deploy@v2
       with:
-        app-name: sample-dotnet-core-webapp
+        app-name: ${{ env.WEBAPP_NAME }}
         publish-profile: ${{ secrets.PUBLISH_PROFILE }}
-        package: './myapp'
+        package: '${{ env.WEBAPP_PACKAGE_PATH }}/myapp'
