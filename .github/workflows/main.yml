@@ -3,7 +3,7 @@ name: eShopOnWeb Build and Test
 on: [push, pull_request, workflow_dispatch]
 
 env:
-  WEBAPP_NAME: sample-dotnet-core-app
+  WEBAPP_NAME: sample-dotnet-core-webapp
   WEBAPP_PACKAGE_PATH: '.'
 
 jobs:
