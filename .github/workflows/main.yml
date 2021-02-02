@@ -25,4 +25,4 @@ jobs:
       with:
         app-name: sample-dotnet-core-webapp
         publish-profile: ${{ secrets.PUBLISH_PROFILE }}
-        package: sample-dotnet-core/sample-dotnet-core/
+        package: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/sample-dotnet-core'
