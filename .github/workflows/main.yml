@@ -17,11 +17,11 @@ jobs:
     - name: Build with dotnet
       run: | 
         dotnet build ./eShopOnWeb.sln --configuration Release
-        dotnet publish -c Release -o '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp' 
+        dotnet publish -c Release -o myapp 
     
     - name: 'Run Azure webapp deploy action using publish profile credentials'
       uses: azure/webapps-deploy@v2
       with:
         app-name: sample-dotnet-core-webapp
         publish-profile: ${{ secrets.PUBLISH_PROFILE }}
-        package: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/sample-dotnet-core'
+        package: './myapp'
