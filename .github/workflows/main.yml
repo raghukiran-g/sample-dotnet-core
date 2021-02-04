@@ -1,7 +1,21 @@
 name: eShopOnWeb Build and Test
 
 on:
- workflow_dispatch
+  push:
+    branches:
+      - master
+      - develop
+    paths:
+      - 'services/account_engine'
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'services/account_engine'
+    branches:
+      - master
+      - develop
+      - feature/*
+  repository_dispatch:
 
 env:
   WEBAPP_NAME: sample-dotnet-core-webapp
