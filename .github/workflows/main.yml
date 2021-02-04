@@ -15,7 +15,7 @@ on:
       - master
       - develop
       - feature/*
-  repository_dispatch:
+  workflow_dispatch:
 
 env:
   WEBAPP_NAME: sample-dotnet-core-webapp
