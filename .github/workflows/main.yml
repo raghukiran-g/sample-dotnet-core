@@ -20,7 +20,7 @@ jobs:
       run: dotnet build ./eShopOnWeb.sln --configuration Release
     - name: dotnet publish
       run: |
-        dotnet publish -c release -o eShopOnWebapp
+        dotnet publish eShopOnWeb.sln -c release -o eShopOnWebapp
     
     - name: 'Run Azure webapp deploy action using publish profile credentials'
       uses: azure/webapps-deploy@v2
