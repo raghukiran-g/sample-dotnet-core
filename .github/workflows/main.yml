@@ -1,6 +1,7 @@
 name: eShopOnWeb Build and Test
 
-on: [push, pull_request, workflow_dispatch]
+on:
+ workflow_dispatch
 
 env:
   WEBAPP_NAME: sample-dotnet-core-webapp
