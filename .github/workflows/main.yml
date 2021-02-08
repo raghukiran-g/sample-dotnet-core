@@ -6,11 +6,11 @@ on:
       - master
       - develop
     paths:
-      - 'services/account_engine'
+      - 'sample-dotnet-core/.github/workflows/**'
   pull_request:
     types: [opened, synchronize, reopened]
     paths:
-      - 'services/account_engine'
+      - 'sample-dotnet-core/.github/workflows/**'
     branches:
       - master
       - develop
