@@ -5,12 +5,8 @@ on:
     branches:
       - master
       - develop
-    paths:
-      - 'sample-dotnet-core/.github/workflows/**'
   pull_request:
     types: [opened, synchronize, reopened]
-    paths:
-      - 'sample-dotnet-core/.github/workflows/**'
     branches:
       - master
       - develop
