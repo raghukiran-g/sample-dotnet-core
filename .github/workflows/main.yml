@@ -28,7 +28,7 @@ jobs:
       steps:
         - run: echo "Deploying to production server on branch $GITHUB_REF"
   dev-check:
-      if: github.ref == 'refs/heads/main'
+      if: github.ref == 'refs/heads/develop'
       runs-on: ubuntu-latest
       steps:
         - run: echo "Deploying to production server on branch $GITHUB_REF"
