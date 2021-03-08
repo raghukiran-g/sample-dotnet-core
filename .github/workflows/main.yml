@@ -28,12 +28,12 @@ jobs:
       steps:
         - run: echo "Deploying to production server on branch $GITHUB_REF"
   dev-check:
-      if: github.ref == 'refs/heads/main'
+      if: github.ref == 'refs/heads/develop'
       runs-on: ubuntu-latest
       steps:
         - run: echo "Deploying to Dev server on branch $GITHUB_REF"
   feature-check:
-      if: github.ref == 'refs/heads/main'
+      if: github.ref == 'refs/heads/feature'
       runs-on: ubuntu-latest
       steps:
         - run: echo "Deploying to feature server on branch $GITHUB_REF"
