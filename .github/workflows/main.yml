@@ -32,8 +32,8 @@ jobs:
     runs-on: ubuntu-latest
     if:
       contains('
-        refs/heads/staging
-        refs/heads/production
+        refs/heads/develop
+        refs/heads/feature
       ', github.ref)
     steps:
     - uses: actions/checkout@v2
