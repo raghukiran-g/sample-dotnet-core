@@ -46,3 +46,7 @@ jobs:
     - name: 'Condition for release'
       if: env.BRANCH == 'release'
       run: echo "Passed with the BRANCH"
+    
+    - name: '2nd condition for release'
+      if: contains(github.ref, "release")
+      run: echo "Passed with the BRANCH"
