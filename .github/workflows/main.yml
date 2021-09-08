@@ -33,7 +33,7 @@ jobs:
     - name: 'Output the branch'
       run: |
          echo "BRANCH=$(echo ${GITHUB_REF##*/})" >> $GITHUB_ENV
-         echo "This is the ${BRANCH}"
+         echo "This is the ${{ env.BRANCH }}"
          env
    
     - name: 'Condition for main'
