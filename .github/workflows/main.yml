@@ -37,5 +37,5 @@ jobs:
          env
    
     - name: 'Condition success'
-      if: contains('main', github.ref)
-      run: echo "Passed with ${BRANCH}"
+      if: env.BRANCH == 'main'
+      run: echo "Passed with the BRANCH"
