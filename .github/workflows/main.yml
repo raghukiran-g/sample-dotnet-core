@@ -33,6 +33,7 @@ jobs:
     - name: 'Output the branch'
       run: |
          echo "BRANCH=$(echo ${GITHUB_REF##*/})" >> $GITHUB_ENV
+         cat $GITHUB_ENV
          echo "action_state=yellow" >> $GITHUB_ENV
          echo "This is the ${{ env.BRANCH }}"
          echo "This is the colour ${{ env.action_state }}"
