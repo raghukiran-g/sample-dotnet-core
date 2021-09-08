@@ -32,7 +32,7 @@ jobs:
 
     - name: 'Output the branch'
       run: |
-         echo "BRANCH=$(echo ${GITHUB_REF##*/})" >> $GITHUB_ENV
+         echo "BRANCH=$(echo ${GITHUB_REF%/*})" >> $GITHUB_ENV
          cat $GITHUB_ENV
          echo "action_state=yellow" >> $GITHUB_ENV
          echo "This is the ${{ env.BRANCH }}"
@@ -44,7 +44,7 @@ jobs:
       run: echo "Passed with the BRANCH"
       
     - name: 'Condition for release'
-      if: env.BRANCH == 'release'
+      if: env.BRANCH == 'refs/heads/release'
       run: echo "Passed with the BRANCH"
     
     - name: 'second condition for release'
