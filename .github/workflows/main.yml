@@ -32,5 +32,9 @@ jobs:
 
     - name: 'Output the branch'
       run: |
-         echo "::set-env name=BRANCH::$(echo ${GITHUB_REF##*/})"
+         echo "BRANCH=$(echo ${GITHUB_REF##*/})" >> $GITHUB_ENV
          echo "This is the ${BRANCH}"
+   
+    - name: 'Condition success'
+      if: contains('main', branch)
+      run: echo "Passed with ${BRANCH}"
