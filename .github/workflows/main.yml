@@ -34,7 +34,8 @@ jobs:
       run: |
          echo "BRANCH=$(echo ${GITHUB_REF##*/})" >> $GITHUB_ENV
          echo "This is the ${BRANCH}"
+         env
    
     - name: 'Condition success'
-      if: contains('main', branch)
+      if: contains('main', ${BRANCH})
       run: echo "Passed with ${BRANCH}"
