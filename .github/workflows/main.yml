@@ -36,6 +36,10 @@ jobs:
          echo "This is the ${BRANCH}"
          env
    
-    - name: 'Condition success'
+    - name: 'Condition for main'
       if: env.BRANCH == 'main'
+      run: echo "Passed with the BRANCH"
+      
+    - name: 'Condition for release'
+      if: env.BRANCH == 'release'
       run: echo "Passed with the BRANCH"
