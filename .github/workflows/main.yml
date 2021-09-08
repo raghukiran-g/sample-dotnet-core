@@ -1,16 +1,16 @@
-name: eShopOnWeb Build and Test
+name: Github Actions test
 
 on:
   push:
     branches:
-      - master
+      - main
       - develop
       - qa
       - release/*
   pull_request:
     types: [opened, synchronize, reopened]
     branches:
-      - master
+      - main
       - develop
       - qa
       - feature/*
